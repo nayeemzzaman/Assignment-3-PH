@@ -5,6 +5,8 @@ section-1
 function KilometerToMeter(num){
     if(num<0)
         return -1;       //when one give negative input then function return -1
+    else if (typeof num !== 'number') //if your input is not a number then program show you a error message.
+        return "notNumber"
     else
         return num*1000; // we know that 1 kilometer = 1000 meter.
 }
@@ -12,6 +14,8 @@ var num= 3.123;
 var result =KilometerToMeter(num);  //call the function and pass a perameter and receive the output in a variable named result.
 if(result==-1)      //
     console.log("Sorry! Distance can't be negative.");
+else if(result=="notNumber")
+    console.log("Please input a number!");
 else
     console.log(num,"kilometer =",result,"meter");
 /**
@@ -21,17 +25,20 @@ else
 function budgetCalculator(numOfWatch, numOfPhone, numOfLaptop){
     if(numOfWatch<0||numOfPhone<0||numOfLaptop<0)       //if number of watch or phone or laptop is negative then it will give e error message.
         return -1;                                      //when one give negative input then function return -1
-    
-        var totalCost=(numOfWatch*50)+(numOfPhone*100)+(numOfLaptop*500) // the sum of watch cost, phone cost, laptop cost is the total cost.
+    else if (typeof numOfLaptop,numOfPhone,numOfWatch!=='number')                   //if your input is not a number then program show you a error message.
+        return "notNumber"
+    var totalCost=(numOfWatch*50)+(numOfPhone*100)+(numOfLaptop*500) // the sum of watch cost, phone cost, laptop cost is the total cost.
     return totalCost;                                               
 }
 
 var numOfWatch=5;
-var numOfPhone=2;
+var numOfPhone='2';
 var numOfLaptop=1;
 var budget=budgetCalculator(numOfWatch,numOfPhone,numOfLaptop); //call the function and pass three perameter and receive the function output in a variable named budget.
 if(budget==-1)                                                  
     console.log("SORRY! Quantity can't be negative.");
+else if(budget=="notNumber")
+    console.log("Please input number!");
 else
     console.log("You total cost will be "+budget+"$");
 /**
@@ -43,6 +50,8 @@ else
     var cost, fisrt10daysCost, second10daysCost, lastDaysCost;
     if(days<0)                             // if anyone give a negative value then program will return a error.
         return -1;
+    else if (typeof days !== 'number') //if your input is not a number then program show you a error message.
+        return "notNumber"
     if(days<=10){                          // if one will have spent 10 days or less than 10 days then perday cost will be 100$ 
         cost=days*100;
     }
@@ -63,6 +72,8 @@ var daysYouStay=11;
 var cost=hotelCost(daysYouStay);        //call the function and receive a value and store it to cost variable.
 if(cost==-1)
     console.log("SORRY! Days can't be negative.");
+else if(cost=="notNumber")
+    console.log("Please input a number!");
 else
     console.log("Your hotel cost is "+cost+" taka.");
 
